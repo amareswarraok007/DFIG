@@ -1,16 +1,55 @@
-<!doctype html>
-<html>
-  <body>
-    <h3>Agri Predictor</h3>
-    N: <input id="N" value="90"><br>
-    P: <input id="P" value="42"><br>
-    K: <input id="K" value="43"><br>
-    Temp: <input id="temperature" value="20.88"><br>
-    Humidity: <input id="humidity" value="82"><br>
-    pH: <input id="ph" value="6.5"><br>
-    Rainfall: <input id="rainfall" value="202.9"><br>
-    <button id="predict">Predict</button>
-    <pre id="out"></pre>
-    <script src="./app.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>🌾 DFIG Crop Predictor</title>
+  <script defer src="./app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7fafc;
+      color: #222;
+      padding: 2rem;
+    }
+    input, button {
+      margin: 6px;
+      padding: 8px;
+      font-size: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #008cba;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #0079a1;
+    }
+    #result {
+      margin-top: 1.5rem;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h2>🌾 DFIG Crop Prediction</h2>
+
+  <form id="cropForm">
+    <input id="N" placeholder="Nitrogen (N)" type="number" step="0.1" />
+    <input id="P" placeholder="Phosphorus (P)" type="number" step="0.1" />
+    <input id="K" placeholder="Potassium (K)" type="number" step="0.1" /><br />
+    <input id="temperature" placeholder="Temperature (°C)" type="number" step="0.1" />
+    <input id="humidity" placeholder="Humidity (%)" type="number" step="0.1" />
+    <input id="ph" placeholder="Soil pH" type="number" step="0.1" />
+    <input id="rainfall" placeholder="Rainfall (mm)" type="number" step="0.1" /><br />
+
+    <button type="submit">Predict Crop</button>
+    <button type="button" id="sample">Sample (Mirchi)</button>
+  </form>
+
+  <h3 id="result"></h3>
+</body>
 </html>
